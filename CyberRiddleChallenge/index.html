@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Riddle Challenge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+  
+<body>
+  
+  <!-- Blur Background Section -->
+  <div class="blur-background"></div>
+  
+  <!-- Grid Section -->
+  <div class="grid-pattern"></div>
+  
+  <!-- Sarcastic Robot Comment Section -->
+  <div id="sarcastic-comment" class="sarcastic-comment"></div>
+  
+  <!-- Sarcastic Comment Pop-Up -->
+  <div class="sarcastic-popup" id="sarcastic-popup" style="display: none;">
+    <p id="sarcastic-text"></p>
+    <button type="button" id="close-sarcastic-btn" class="btn small-btn">Close</button>
+  </div>
+  
+  <!-- Header Section -->
+  <header class="header">
+    <!-- Language Selection -->
+    <div class="language-selector">
+      <button id="lang-en" class="lang-btn active">EN</button>
+      <button id="lang-ru" class="lang-btn">RU</button>
+    </div>
+    
+    <!-- Mission Selection -->
+    <p class="mission">MISSION: Decrypt the riddles to prevent AI domination</p>
+    <h1>Cyber Riddle Challenge</h1>
+    <div class="title-line"></div>
+    <div class="timer-frame">
+      <p class="timer" id="timer">05:00</p>
+    </div>
+  </header>
+  
+  <!-- Riddle Section -->
+  <section class="riddle-section">
+    <div class="riddle-container">
+      <div class="level-display">Level 1 of 10</div>
+      <p class="riddle" id="riddle-text">I hide in plain sight, yet I'm not what I seem. I disrupt the flow of logic, but I'm part of the machine. What am I?</p>
+      <button type="button" id="hint-btn" class="hint-btn">HINT</button>
+    </div>
+  </section>
+
+  <!-- Input Section -->
+  <section class="input-section">
+    <form id="hacking-form">
+      <div class="input-row">
+        <input type="text" id="code-input" placeholder="Enter your answer..." maxlength="10">
+        <button type="button" id="submit-btn" class="btn">SUBMIT</button>
+      </div>
+    </form>
+  </section>
+
+   <!-- Hint Pop-Up -->
+  <div class="hint-popup" id="hint-popup" style="display: none;">
+    <p id="hint">Hint: It's a disturbance in a system.</p>
+    <button type="button" id="close-hint-btn" class="btn small-btn">Close</button>
+  </div>
+
+  <!-- Feedback Section -->
+  <section class="feedback-section">
+    <p id="message"></p>
+  </section>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

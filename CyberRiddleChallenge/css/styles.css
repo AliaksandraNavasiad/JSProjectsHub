@@ -1,0 +1,540 @@
+/* Centralize All Elements */
+body {
+  margin: 0;
+  font-family: 'Orbitron', 'Audiowide', sans-serif;
+  background: linear-gradient(to bottom, #0D4B3F, #111111);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Blur Background */
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: none;
+}
+
+/* Grid Pattern */
+.grid-pattern {
+  pointer-events: none;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent 49px,
+      rgba(1, 252, 203, 0.3) 50px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 49px,
+      rgba(1, 252, 203, 0.3) 50px
+    );
+  position: absolute;
+  top: 0;
+  left: 0;
+  mix-blend-mode: overlay;
+}
+
+/* Update Header */
+.header {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 25px;
+}
+
+/* Language Selector */
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Language Button Style */
+.lang-btn {
+  padding: 8px 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  color: #01FCCB;
+  background-color: #111;
+  border: 2px solid #01FCCB;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #01FCCB;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Buttons */
+.lang-btn:hover {
+  background-color: #01FCCB;
+  color: #111;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #01FCCB;
+}
+
+/* Active Button Style */
+.lang-btn.active {
+  background-color: #01FCCB;
+  color: #111;
+  box-shadow: 0 0 20px #01FCCB;
+  transform: scale(1.1);
+}
+
+/* Header Section Styling */
+.mission {
+  color: #F2F2F2;
+  margin-bottom: -30px;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #01FCCB;
+}
+
+/* Styling for Line Under Title */
+.title-line {
+  margin: 10px auto;
+  margin-top: -5x;
+  width: 110%;
+  border: 2px solid #01FCCB;
+  box-shadow: 0 0 10px #01FCCB;
+  transform: translateX(-5%);
+}
+
+/* Title Style with Neon Effect */
+header h1 {
+  color: #01FCCB;
+  text-shadow: 
+    0 0 3px #111111, 
+    0 0 8px #111111, 
+    0 0 15px #111111;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Center Riddle Section */
+.riddle-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Riddle Container */
+.riddle-container {
+  position: relative;
+  background: rgba(0, 20, 15, 0.7);
+  border: 2px solid #01FCCB;
+  padding: 70px 90px 45px; 
+  width: 50%;
+  max-width: 80%;
+  color: #F2F2F2;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  box-shadow: 
+    0 0 20px #01FCCB,
+    inset 0 0 15px rgba(1, 252, 203, 0.3);
+  font-family: 'Audiowide', monospace;
+  text-align: center;
+  line-height: 1.4;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Level Display Container */
+.level-display {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 20, 15, 0.9);
+  border: 2px solid #01FCCB;
+  padding: 5px 20px 5px;
+  color: #01FCCB;
+  font-size: 2.7vh;
+  border-radius: 5px;
+  box-shadow: 
+    0 0 15px #01FCCB,
+    inset 0 0 10px rgba(1, 252, 203, 0.3);
+  font-family: 'Audiowide', monospace;
+  text-align: center;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+
+/* Hint Button */
+.hint-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3vh;
+  border-radius: 4px;
+  background-color: #0F2E28;
+  color: #01FCCB;
+  border: 1px solid #01FCCB;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+}
+
+.hint-btn:hover {
+  background-color: #01FCCB;
+  color: #1A1A1A;
+  box-shadow: 0 0 25px #01FCCB;
+}
+
+/* Hint Pop-Up */
+.hint-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  color: #C8FFF4;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px #00ffcc;
+  font-family: 'Audiowide', sans-serif;
+  z-index: 1000;
+  display: none;
+  max-width: 80%;
+  text-align: center;
+}
+
+.hint-popup p {
+  font-size: 1.8rem;
+}
+
+/* Styling Close Hint Button */
+#close-hint-btn {
+  background: #0F2E28;
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffcc;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+/* Hover Effect for Close Hint Button */
+#close-hint-btn:hover {
+  background: #00ffcc;
+  text-shadow: 0 0 8px #FFA500, 0 0 16px #00ffcc;
+  color: black;
+  box-shadow: 0 0 20px #00ffcc;
+  transform: scale(1.03);
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  width: 100%;
+}
+
+/* Input Row Container */
+.input-row {
+  display: flex;
+  align-items: center;
+  width: auto;
+  gap: 1vh; /* Space between input and button */
+}
+
+#hacking-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Input Container */
+.input-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Input Field */
+#code-input {
+  background-color: #1A1A1A;
+  color: #646464;
+  font-family: 'Orbitron', sans-serif;
+  border: 2px solid #01FCCB;
+  box-shadow: 0 0 10px #01FCCB;
+  border-radius: 5px;
+  padding: 18px 15px;
+  width: 40vh; 
+  box-sizing: border-box;
+  font-size: 2vh;
+  height: 5vh; 
+}
+
+/* Submit Button */
+#submit-btn {
+  background-color: #01FCCB;
+  border: 2px solid #01FCCB;
+  color: #1A1A1A;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  padding: 0 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #01FCCB;
+  transition: all 0.3s ease;
+  font-size: 2vh;
+  height: 5vh; 
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover Effect for Submit Button */
+#submit-btn:hover {
+  background-color: #01FCCB;
+  border-color: #01FCCB;
+  color: #1A1A1A;
+  box-shadow: 0 0 25px #01FCCB;
+  transform: scale(1.1);
+}
+
+/* Feedback Section */
+.feedback-section {
+  margin: 2rem 0;
+  min-height: 40px;
+}
+
+#message {
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+
+/* ======================= */
+/* TIMER SECTION */
+/* ======================= */
+.timer-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #FFD500;
+  border: 3px solid #01FCCB;
+  width: 260px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 20px #01FCCB,
+    inset 0 0 15px rgba(1, 252, 203, 0.3);
+  margin: 50px auto 30px auto;
+}
+
+.timer {
+  font-size: 5vh; 
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #FFD500;
+  padding: 5px 10px;
+}
+
+/* Emergency state (last 30 seconds) */
+.timer-frame-critical {
+  border-image: linear-gradient(45deg, #FC017D, transparent) 1;
+  box-shadow: 
+    0 0 30px #FC017D,
+    inset 0 0 20px rgba(252, 1, 125, 0.4);
+  animation: pulse 0.8s infinite alternate;
+}
+
+.timer-critical {
+  color: #FC017D;
+  text-shadow: 
+    0 0 15px #FC017D,
+    0 0 30px #FC017D;
+}
+
+@keyframes pulse {
+  from { 
+    box-shadow: 0 0 15px #FC017D;
+    transform: scale(1);
+  }
+  to { 
+    box-shadow: 0 0 40px #FC017D;
+    transform: scale(1.02);
+  }
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #00ffcc, -2px -2px #FF007F;
+    transform: translate(0, 0);
+  }
+  25% {
+    text-shadow: -2px 0 #00ffcc, 2px 2px #FF007F;
+    transform: translate(-2px, 2px);
+  }
+  50% {
+    text-shadow: 2px -2px #FF007F, -2px 0 #00ffcc;
+    transform: translate(2px, -2px);
+  }
+  75% {
+    text-shadow: 0 2px #FF007F, -2px -2px #00ffcc;
+    transform: translate(-2px, 0);
+  }
+  100% {
+    text-shadow: 2px 2px #00ffcc, -2px -2px #FF007F;
+    transform: translate(0, 0);
+  }
+}
+
+.correct-glitch {
+  animation: glitch 0.5s infinite;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.riddle-glitch {
+  animation: glitch 0.5s infinite;
+}
+
+.sarcastic-comment {
+  position: absolute;
+  top: 180px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', 'Audiowide', sans-serif;
+  color: #FFFF00;
+  text-shadow: 0 0 8px #FFFF00, 0 0 16px #FFFF00;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border: 1px solid #FFFF00;
+  box-shadow: 0 0 15px #FFFF00;
+  z-index: 10;
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Sarcastic Pop-Up */
+.sarcastic-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  color: #FF6700;
+  border: 2px solid #FF6700;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px #FF6700;
+  font-family: 'Audiowide', sans-serif;
+  z-index: 1000;
+  display: none;
+  max-width: 80%;
+  text-align: center;
+}
+
+.sarcastic-popup p {
+  font-size: 1.8rem;
+}
+
+/* Styling Close Sarcastic Button */
+#close-sarcastic-btn {
+  background: #FF6700;
+  border: 2px solid #FF6700;
+  color: #F2F2F2;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #FF6700;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+/* Hover Effect for Close Sarcastic Button */
+#close-sarcastic-btn:hover {
+  background: #FF6700;
+  color: #F2F2F2;
+  box-shadow: 0 0 20px #FF6700;
+  transform: scale(1.03);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Floating neon particles */
+.particle {
+  position: absolute;
+  background: rgba(1, 252, 203, 0.6);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float linear infinite;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
