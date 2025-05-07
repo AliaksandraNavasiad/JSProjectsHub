@@ -5,7 +5,7 @@ A collection of JavaScript projects and scripts, from beginner-friendly experime
 
 🕹️ **A cyberpunk-themed riddle game with timer and sarcastic AI commentary**  
 
-![Game Preview](game-preview.jpg)
+![Game Preview](CyberRiddleChallenge/game-preview.jpg)
 
 ## 🚀 Features  
 - 10 cryptic riddles with dual-language support (EN/RU)  
